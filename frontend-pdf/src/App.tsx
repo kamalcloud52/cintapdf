@@ -381,11 +381,6 @@ export default function App() {
             <span className="font-bold text-slate-500">CintaPDF</span>
             <span>• 100% Client-Side Privacy Protection</span>
           </p>
-          <div className="flex items-center gap-1.5 text-slate-400">
-            <span>Dibuat penuh dengan</span>
-            <Heart className="h-3.5 w-3.5 text-rose-500 fill-rose-500 animate-pulse" />
-            <span>untuk Keamanan Data</span>
-          </div>
         </div>
       </footer>
     </div>
