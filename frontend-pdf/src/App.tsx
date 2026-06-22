@@ -374,12 +374,16 @@ export default function App() {
       </main>
 
       {/* FOOTER METRICS COPYRIGHT */}
-      <footer id="global-credits" className="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-400 mt-10">
-        <div className="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3 font-medium">
-          <p className="flex items-center gap-1">
-            <span>Copyright 2026</span>
-            <span className="font-bold text-slate-500">CintaPDF</span>
-            <span>• 100% Client-Side Privacy Protection</span>
+      <footer id="global-credits" className="bg-white border-t border-slate-150 py-6 text-xs text-slate-400/80 mt-12">
+        <div className="max-w-4xl mx-auto px-4 flex flex-col items-center justify-center text-center gap-1.5 font-medium">
+          <div className="flex flex-wrap items-center justify-center gap-1.5 text-slate-500/90">
+            <span>&copy; 2026</span>
+            <span className="font-bold text-indigo-600/80">CintaPDF</span>
+            <span className="text-slate-300">•</span>
+            <span>100% Client-Side Privacy Protection</span>
+          </div>
+          <p className="text-[11px] text-slate-400/60 font-normal">
+            Proses kompresi dijalankan sepenuhnya di dalam peramban perangkat Anda secara aman demi privasi mutlak.
           </p>
         </div>
       </footer>
