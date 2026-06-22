@@ -189,8 +189,13 @@ export default function App() {
       <header id="main-navigation" className="bg-white border-b border-slate-200/85 sticky top-0 z-50 transition-shadow">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div id="app-logo-badge" className="p-2.5 bg-indigo-600 rounded-xl text-white shadow-md shadow-indigo-600/10">
-              <FileDown className="h-5.5 w-5.5" />
+            <div id="app-logo-badge" className="h-10 w-10 rounded-xl overflow-hidden shadow-md shadow-indigo-600/10 ring-2 ring-indigo-50 border border-slate-100 flex items-center justify-center bg-white">
+              <img 
+                src="https://raw.githubusercontent.com/kamalcloud52/cintapdf/refs/heads/main/iconpdf.jpg" 
+                alt="CintaPDF Logo" 
+                className="h-full w-full object-cover"
+                referrerPolicy="no-referrer"
+              />
             </div>
             <div>
               <h1 className="text-lg md:text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-1.5 leading-none">
