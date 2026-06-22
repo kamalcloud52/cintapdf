@@ -1,10 +1,11 @@
 import { PDFDocument } from 'pdf-lib';
 import * as pdfjsLib from 'pdfjs-dist';
+// @ts-ignore
+import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.mjs?url';
 
-// Hubungkan secara dinamis workerSrc ke global NPM CDN (unpkg) berdasarkan versi pdfjs-dist yang terpasang.
-// unpkg selalu memperbarui berkas langsung dari npm rilis seketika setelah dipublikasikan, menjamin ketersediaan versi 6.0.227.
-const pdfjsVersion = pdfjsLib.version || '6.0.227';
-pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.mjs`;
+// Gunakan bundler lokal Vite untuk memuat worker.
+// Ini menjamin kelancaran muat mandiri tanpa CORS, tanpa error CSP, dan tanpa bergantung pada CDN luar.
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 /**
  * Extracts key metadata from a PDF file buffer using pdf-lib.
