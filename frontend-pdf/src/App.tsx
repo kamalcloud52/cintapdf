@@ -200,7 +200,6 @@ export default function App() {
           </div>
           
           <div className="hidden sm:flex items-center gap-1.5">
-            <span className="h-2 w-2 rounded-full bg-indigo-500"></span>
             <span className="text-xs font-bold text-slate-500 font-mono">WASM Optimized v2.4</span>
           </div>
         </div>
