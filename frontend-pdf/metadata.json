@@ -1,0 +1,6 @@
+{
+  "name": "CintaPDF",
+  "description": "🔒 100% private, client-side PDF compressor that optimizes and reduces PDF sizes entirely in your browser using local processing.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
