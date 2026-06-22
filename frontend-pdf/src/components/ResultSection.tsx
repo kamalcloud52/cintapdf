@@ -1,4 +1,4 @@
-import { Download, Sparkles, RefreshCw, FileCheck, Gauge, Info, AlertCircle, Copy, Check } from 'react';
+import { Download, Sparkles, RefreshCw, FileCheck, Gauge, Info, AlertCircle, Copy, Check } from 'lucide-react';
 import { useState } from 'react';
 import { CompressionResult, CompressionMode } from '../types';
 import { motion } from 'motion/react';
