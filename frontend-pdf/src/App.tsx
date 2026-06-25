@@ -6,7 +6,7 @@ import ResultSection from './components/ResultSection';
 import HistorySection from './components/HistorySection';
 import { CompressionMode, PDFMetadata, CompressionResult, HistoryItem, PDFTool } from './types';
 import { getPDFMetadata, compressLight, compressMedium, compressHigh, mergePDFs, parsePageRanges, extractPDFPages, rotatePDFPages, addWatermarkToPDF, addPageNumbersToPDF, deletePDFPages } from './utils/pdfProcessor';
-import { FileDown, ShieldAlert, FileSliders, CircleAlert, Cpu, Heart, CheckCircle2, Layers, Scissors, RotateCw, Plus, Trash2, ArrowUp, ArrowDown, Lock, FileSignature } from 'lucide-react';
+import { FileDown, ShieldAlert, FileSliders, CircleAlert, Cpu, Heart, CheckCircle2, Layers, Scissors, RotateCw, Plus, Trash2, ArrowUp, ArrowDown, Lock, FileSignature, Sparkles, Mail, Coffee, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
@@ -664,8 +664,65 @@ export default function App() {
 
       {/* CORE WRAPPER SECTION */}
       <main id="primary-content" className="max-w-4xl mx-auto px-4 py-6 md:py-10 w-full flex-grow space-y-6">
-        {/* PRIVACY WARNING NOTICE BANNER */}
-        {!file && !result && mergeFiles.length === 0 && <PrivacyBanner />}
+        {/* HERO / BRIEF INFORMATION & FEATURES HEADER */}
+        {!file && !result && mergeFiles.length === 0 && (
+          <motion.div
+            id="hero-information-header"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="bg-gradient-to-br from-slate-50 to-indigo-50/20 rounded-3xl p-6 md:p-8 text-slate-800 shadow-xs border border-slate-200 relative overflow-hidden mb-2"
+          >
+            {/* Subtle decorative lights */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl -z-10" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -z-10" />
+            
+            <div className="max-w-3xl">
+              <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-100/80 uppercase tracking-wider inline-flex items-center gap-1">
+                <Sparkles className="h-3 w-3 text-indigo-600 animate-pulse" /> Alat PDF Bebas Server
+              </span>
+              <h2 className="text-2xl md:text-3.5xl font-black mt-3 text-slate-900 tracking-tight leading-tight">
+                Kustomisasi PDF Aman <br className="hidden sm:inline" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-sky-600 to-emerald-600 font-extrabold">
+                  100% Instan di Perangkat Anda
+                </span>
+              </h2>
+              <p className="text-slate-600 text-sm mt-3.5 leading-relaxed font-medium">
+                CintaPDF menghadirkan solusi pengolahan berkas PDF kelas profesional langsung dari browser Anda. Tanpa pendaftaran, tanpa biaya, tanpa batasan, dan yang terpenting: <strong className="text-emerald-600 font-bold">berkas Anda tidak pernah dikirim ke server mana pun</strong>.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-8 pt-6 border-t border-slate-200">
+              <div className="flex items-start gap-3">
+                <div className="p-2 bg-white rounded-xl border border-slate-100 shadow-xs text-indigo-600 shrink-0">
+                  <FileSliders className="h-4 w-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-slate-800">Kinerja Maksimal</h4>
+                  <p className="text-[11px] text-slate-500 mt-0.5 leading-normal">Optimasi ukuran file, pemotongan, pemutaran, & penggabungan PDF sekejap mata.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="p-2 bg-white rounded-xl border border-slate-100 shadow-xs text-sky-600 shrink-0">
+                  <FileSignature className="h-4 w-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-slate-800">Personalisasi Kreatif</h4>
+                  <p className="text-[11px] text-slate-500 mt-0.5 leading-normal">Tambahkan watermark teks kustom & nomor halaman dinamis sesuai format keinginan Anda.</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3 sm:col-span-2 md:col-span-1">
+                <div className="p-2 bg-white rounded-xl border border-slate-100 shadow-xs text-emerald-600 shrink-0">
+                  <Lock className="h-4 w-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-slate-800">Privasi Mutlak</h4>
+                  <p className="text-[11px] text-slate-500 mt-0.5 leading-normal">Didukung teknologi WebAssembly lokal yang menjamin dokumen tidak pernah keluar dari perangkat.</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         {/* TABS SELECTOR FOR VARIOUS SERVERLESS PDF TOOLS */}
         <div id="pdf-tools-navbar" className="bg-white border border-slate-200 rounded-2xl p-1.5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2 shadow-xs">
@@ -1345,6 +1402,13 @@ export default function App() {
           onDeleteItem={handleDeleteHistoryItem}
           onClearAll={handleClearAllHistory}
         />
+
+        {/* PRIVACY WARNING NOTICE BANNER - RELOCATED TO BOTTOM */}
+        <div className="pt-4">
+          <PrivacyBanner />
+        </div>
+
+
       </main>
 
       {/* FOOTER METRICS COPYRIGHT */}
