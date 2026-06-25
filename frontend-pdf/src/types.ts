@@ -1,4 +1,5 @@
 export type CompressionMode = 'light' | 'medium' | 'high';
+export type PDFTool = 'compress' | 'merge' | 'split' | 'rotate' | 'watermark' | 'numbering' | 'delete';
 
 export interface PDFMetadata {
   name: string;
